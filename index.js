@@ -1,9 +1,9 @@
-const http = require('http');
+const express = require('express');
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('NODE JS TEST PAGE');
+const server = express();
+
+server.get('/', (req, res) => {
+    res.status(200).send('NODE JS TEST PAGE');
 });
 
 server.listen(8080, '127.0.0.1', () => {
